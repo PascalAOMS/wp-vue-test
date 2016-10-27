@@ -1,0 +1,66 @@
+{
+    "repositories": [{
+        "type": "composer",
+        "url": "https://wpackagist.org"
+    },
+    {
+        "type": "package",
+        "package": {
+            "name": "advanced-custom-fields-pro",
+            "version": "5.4.8",
+            "type": "wordpress-plugin",
+            "dist": {
+                "type": "zip",
+                "url": "https://connect.advancedcustomfields.com/index.php?p=pro&a=download&k=b3JkZXJfaWQ9NzExMjd8dHlwZT1wZXJzb25hbHxkYXRlPTIwMTUtMTItMTcgMDc6MDc6MDE="
+            }
+        }
+    },
+    {
+        "type": "package",
+        "package": {
+            "name": "wp-sync-db",
+            "version": "1.5",
+            "type": "wordpress-plugin",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/wp-sync-db/wp-sync-db/archive/1.5.zip"
+            }
+        }
+    },
+    {
+        "type": "package",
+        "package": {
+            "name": "wp-sync-db-media-files",
+            "version": "1.1.5",
+            "type": "wordpress-plugin",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/wp-sync-db/wp-sync-db-media-files/archive/1.1.5.zip"
+            }
+        }
+    }],
+
+    "require": {
+        "fancyguy/webroot-installer": "1.*",
+        "johnpbloch/wordpress": "4.6.*",
+
+        "wpackagist-plugin/wordpress-seo": "*",
+        "wpackagist-plugin/option-tree": "*",
+        "wpackagist-plugin/disable-emojis": "*",
+        "wpackagist-plugin/disable-embeds": "*",
+        "wpackagist-plugin/backwpup": "*",
+        "wpackagist-plugin/regenerate-thumbnails": "*",
+
+        "advanced-custom-fields-pro": "5.*",
+        "wp-sync-db": "1.*",
+        "wp-sync-db-media-files": "1.*"
+
+    },
+
+    "extra": {
+        "wordpress-install-dir": "public/wp",
+        "installer-paths": {
+            "public/wp-content/plugins/{$name}/": ["type:wordpress-plugin"]
+        }
+    }
+}

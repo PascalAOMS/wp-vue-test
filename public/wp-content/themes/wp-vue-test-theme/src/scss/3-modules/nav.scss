@@ -1,0 +1,229 @@
+// NAVIGATION
+////////////////////////////
+.nav {
+
+	position: relative; // for dropdown
+
+	> ul { position: relative; margin: 0; display: inline; }
+
+	&--item {
+		display: inline-block;
+		color: $txt-color;
+		transition: .2s;
+		font-size: .875rem;
+		margin-left: -3px;
+
+
+    	a {
+			padding: 10px 15px;
+			display: block;
+			color: inherit;
+		}
+
+		&:hover, &.is-current { color: $prim-color; }
+  	}
+
+	&--icon { cursor: pointer; }
+
+	&--item:first-child { margin-left: 0; }
+
+}
+
+
+
+// DROPDOWN
+////////////////////////////
+.nav-drop {
+	position: relative; // to absolute the sub menu
+	padding-right: 10px; // for indicator
+
+	&::before, &::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		background: $txt-color;
+		transition: .2s;
+	}
+
+	&::before {
+		height: 1px;
+		width: 7px;
+		right: 9px;
+	}
+	&::after {
+		height: 7px;
+		width: 1px;
+		right: 12px;
+	}
+
+	&.is-open {
+		@extend .is-current;
+
+		&::after { height: 0; }
+
+		.nav-sub { z-index: 2; }
+	}
+
+	&:hover > ul { display: block; }
+
+
+}
+
+
+
+// NAV SUB
+////////////////////////////
+.nav-sub { // width and top generated via JS
+	position: absolute;
+	left: 0;
+	top: 100%; // offset for border
+	z-index: 1;
+	min-width: 100%;
+
+	&--item {
+		@extend .nav--item;
+		display: block;
+		border: none;
+		margin-left: 0;
+		background: $gray-lightest;
+
+	}
+
+}
+
+
+// NAV DEEP (Sub level 2)
+////////////////////////////
+.nav-deep {
+	position: absolute;
+	top: 0;
+	right: 100%;
+	min-width: 100%;
+
+	&--item { @extend .nav-sub--item; }
+}
+
+
+// NAV HANDLER
+////////////////////////////
+//$dash-array: 40;
+
+
+.nav-handler {
+	width: 30px;
+	//height: 35px;
+	cursor: pointer;
+	display: none;
+
+	//&:hover line:nth-child(2) { stroke-dasharray: $dash-array / 1.33; }
+	//&:hover line:nth-child(3) { stroke-dasharray: $dash-array / 2; }
+	&:hover .line { background: darken($prim-color, 15%); }
+
+	//line
+	.line {
+		//stroke: $prim-color;
+		//stroke-width: 3;
+		//stroke-dasharray: $dash-array;
+		height: 4px;
+		border-radius: 3px;
+		background: $prim-color;
+		transition: background .2s ;
+		stroke-linecap: square;
+
+		&:nth-child(1) { animation: nav-line-1-rev .7s ease-in-out; }
+		&:nth-child(2) { animation: nav-line-2-rev .7s $ease-in-back; margin: 5px 0; }
+		&:nth-child(3) { animation: nav-line-3-rev .7s ease-in-out; }
+	}
+
+	&.is-active {
+		// &:hover line { stroke-dasharray: $dash-array; }
+		// line:nth-child(1) { transform: rotate(45deg) translate(5px, -5px); }
+		// line:nth-child(2) { opacity: 0; }
+		// line:nth-child(3) { transform: rotate(-45deg) translate(-19px, -5px); }
+
+		.line:nth-child(1) { animation: nav-line-1 .7s $ease-in-back forwards; }
+		.line:nth-child(2) { animation: nav-line-2 .7s ease-in forwards; }
+		.line:nth-child(3) { animation: nav-line-3 .7s $ease-in-back forwards; }
+	}
+}
+
+
+// ANIMATION
+////////////////////////////
+@keyframes nav-line-1-rev {
+	0% { transform: translate3d(0,9px,0) rotate(45deg); }
+	50% { transform: translate3d(0,9px,0) rotate(0); }
+	100% { transform: translate3d(0,0,0) rotate(0); }
+}
+
+@keyframes nav-line-2-rev {
+	0% { transform: scale(0); opacity: 0; }
+	100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes nav-line-3-rev {
+	0% { transform: translate3d(0,-9px,0) rotate(135deg); }
+	50% { transform: translate3d(0,-9px,0) rotate(0); }
+	100% { transform: translate3d(0,0,0) rotate(0); }
+}
+
+
+@keyframes nav-line-1 {
+	0% { transform: translate3d(0,0,0) rotate(0); }
+	50% { transform: translate3d(0,9px,0) rotate(0); }
+	100% { transform: translate3d(0,9px,0) rotate(45deg); }
+}
+
+@keyframes nav-line-2 {
+	0% { transform: scale(1); opacity: 1; }
+	100% { transform: scale(0); opacity: 0; }
+}
+
+@keyframes nav-line-3 {
+	0% { transform: translate3d(0,0,0) rotate(0); }
+	50% { transform: translate3d(0,-9px,0) rotate(0); }
+	100% { transform: translate3d(0,-9px,0) rotate(135deg);	}
+}
+
+// QUERIES
+////////////////////////////
+@media(min-width: $sm-up) { .nav { display: block !important; } } // DISAPPEARING FIX
+
+@media(max-width: $xs) {
+
+	.nav { display: none; width: 100%; }
+
+	.nav > ul { display: block; padding-top: 25px; }
+
+	.nav--item {
+		display: block;
+		border: none;
+		margin-left: 0;
+		width: 100%;
+		text-align: left;
+	}
+
+	.nav-drop::before { height: 3px; width: 9px; right: 9px; bottom: auto; top: 20px; }
+	.nav-drop::after { height: 9px; width: 3px;	right: 12px; bottom: auto; top: 17px; }
+
+	.nav-sub { position: relative; top: auto; left: 10px; }
+
+	.nav-deep { position: relative; right: 0; top: auto; left: 10px; }
+
+	.nav-handler { display: block; }
+
+	.nav--icon {
+		float: left;
+		width: 50%;
+		text-align: center;
+
+		a { background: transparent; color: $txt-color; }
+
+		&:hover, &:hover a  { color: $bg-color; background: $sec-color; }
+	}
+
+
+
+} // end query xs

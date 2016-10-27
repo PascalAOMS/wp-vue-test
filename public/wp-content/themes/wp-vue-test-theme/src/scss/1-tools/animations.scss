@@ -1,0 +1,71 @@
+//// SPINNER
+///////////////////////
+.spin, .loader { animation: spin 1s infinite linear; }
+@keyframes spin { from { transform: rotate(0deg); }
+				  to { transform: rotate(360deg); }
+}
+
+
+///////////////////////
+//// IN
+///////////////////////
+%in-top { animation: inTop .5s ease-out forwards; }
+@keyframes inTop {		from 	{ transform: translate(0, -30px); opacity: 0; }
+						to 		{ transform: translate(0, 0); opacity: 1; }
+}
+/* /////////////////////// */
+%in-bottom { animation: inBottom .5s ease-out forwards; }
+@keyframes inBottom {	from 	{ transform: translate(0, 30px); opacity: 0; }
+						to 		{ transform: translate(0, 0); opacity: 1; }
+}
+/* /////////////////////// */
+%in-left { animation: inLeft 1s ease-out forwards; }
+@keyframes inLeft {		from 	{ transform: translate(-30px, 0); opacity: 0; }
+						to 		{ transform: translate(0, 0); opacity: 1; }
+}
+/* /////////////////////// */
+%in-right { animation: inRight .5s ease-out forwards; }
+@keyframes inRight {	from 	{ transform: translate(30px, 0); opacity: 0; }
+					    to 		{ transform: translate(0, 0); opacity: 1; }	}
+
+/* /////////////////////// */
+%in-fade { animation: inFade .5s ease forwards; }
+@keyframes inFade {		from 	{ opacity: 0; }
+					    to 		{ opacity: 1; }
+}
+%in-blur { animation: inBlur .5s ease-out forwards; }
+@keyframes inBlur {		from 	{ filter: blur(0px); }
+						to 		{ filter: blur(5px); }
+}
+
+/* ///////////////////////
+//// OUT
+/////////////////////// */
+%out-top { animation: outTop .5s ease-in forwards; }
+@keyframes outTop {		from 	{ transform: translate(0, 0); opacity: 1; }
+						to 		{ transform: translate(0, -30px); opacity: 0; }
+}
+/* /////////////////////// */
+%out-bottom { animation: outBottom .5s ease-in forwards; }
+@keyframes outBottom {	from 	{ transform: translate(0, 0); opacity: 1; }
+						to 		{ transform: translate(0, 30px); opacity: 0; }
+}
+/* /////////////////////// */
+%out-left { animation: outLeft .5s ease-in forwards; }
+@keyframes outLeft {	from 	{ transform: translate(0, 0); opacity: 1; }
+					    to 		{ transform: translate(-30px, 0); opacity: 0; }
+}
+/* /////////////////////// */
+%out-right { animation: outRight .5s ease-in forwards; }
+@keyframes outRight {	from 	{ transform: translate(0, 0); opacity: 1; }
+					    to 		{ transform: translate(30px, 0); opacity: 0; }
+}
+/* /////////////////////// */
+%out-fade { animation: outFade .5s ease forwards; }
+@keyframes outFade {	from 	{ opacity: 1; }
+					    to 		{ opacity: 0; }
+}
+%out-blur { animation: outBlur .5s ease-in forwards; }
+@keyframes outBlur {	from 	{ filter: blur(5px); }
+						to 		{ filter: blur(0px); }
+}

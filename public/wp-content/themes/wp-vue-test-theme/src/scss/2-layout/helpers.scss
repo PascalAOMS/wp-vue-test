@@ -1,0 +1,18 @@
+// UPDATED 11/02/16
+
+
+
+// FLOATERS
+//
+.l-left { float: left; }
+.l-right { float: right; }
+
+// pushpin
+.pin-top, .pin-bottom { position: relative; }
+.pinned { position: fixed !important; }
+
+
+// ALIGNMENT
+.center-vert { align-items: center; } // flex-start | center | flex-end
+.center-horz { float: none; margin-left: auto; margin-right: auto; }
+.order-first { order: 1; } // -1 | 0 | 1

@@ -1,0 +1,52 @@
+// CLEARFIX
+@mixin clear() {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+
+
+// FONT FACE
+@mixin font-face($name, $weight: 400, $style: normal, $ie: "") {
+    $filepath: "../assets/fonts/" + $name;
+    @font-face {
+        font-family: "#{$name}";
+        font-style: $style;
+        font-weight: $weight;
+        text-rendering: auto;
+
+    @if $ie != "" {
+        src: url($filepath + ".eot");                         // IE6-8 (really?)
+    }
+        src: url($filepath + ".woff")  format('woff'),        // IE9+ and all others
+             url($filepath + ".woff2") format('woff2'),       // modern browsers
+             url($filepath + ".ttf")   format('truetype');    // Android 4+
+    }
+
+}
+
+// LAYOUT MIXINS
+/////////////////////////////
+// DECLARE SPECIAL CLASS
+// .pull-4 { @include pull(4); }
+//
+@mixin pull($column-number) {
+
+    right: ($column-number / 12) * 100%;
+
+}
+////
+@mixin push($breakpoint-acronym, $column-number) {
+
+        left: ($column-number / 12) * 100%;
+
+}
+////
+@mixin offset($breakpoint-acronym, $column-number) {
+
+        margin-left: ($column-number / 12) * 100%;
+
+}

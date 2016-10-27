@@ -1,0 +1,69 @@
+### Boilerplate ###
+build
+
+
+### WordPress ###
+*.log
+vendor
+production.zip
+extract.php
+
+public/wp
+public/wp-content/plugins
+public/wp-content/advanced-cache.php
+public/wp-content/backup-db/
+public/wp-content/backups/
+public/wp-content/blogs.dir/
+public/wp-content/cache/
+public/wp-content/upgrade/
+public/wp-content/wp-cache-config.php
+
+
+## Uploads
+# DB Backup
+public/wp-content/uploads/wp-sync-db
+# Don't add processed images
+public/wp-content/uploads/**/*-*x[0-9][0-9].*
+public/wp-content/uploads/**/*-*x[0-9][0-9][0-9].*
+public/wp-content/uploads/**/*-*x[0-9][0-9][0-9][0-9].*
+
+
+
+### OSX ###
+*.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Misc
+license.txt
+readme.html
+sitemap.xml
+sitemap.xml.gz
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### Node ###
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules
+.npm

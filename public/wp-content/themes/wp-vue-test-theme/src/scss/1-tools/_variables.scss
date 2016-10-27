@@ -1,0 +1,99 @@
+// UPDATED 11/04/2016
+
+
+// TO DO
+// animations to mixin
+// accordion to dl
+
+
+// OPTIONS
+$sticky-header:                true;
+$sticky-footer:                true;
+$large-container:              false;
+
+
+// PRIMARY VARIABLES
+$prim-color:                   #90C693; // CI Color #1
+$sec-color:                    lighten($prim-color, 10%); // CI Color #2
+$txt-color:                    #3d3d3d;
+$bg-color:                     lighten($prim-color, 60%);
+
+
+// GRID
+$grid-columns:                 12;
+$grid-gutter:                  30px;
+
+// MAX WIDTH
+$tiny:                         543px; // 320 - 543 (small phones)
+$xs:                           767px; // 544 - 767 (tablet, landscape)
+$sm:                           961px; // 769 - 991 (tablet, portrait)
+$md:                           1199px; // 992 - 1199 (notebook, desktop)
+
+// MIN WIDTH
+$xs-up:                        544px; // 544 - 767
+$sm-up:                        768px; // 768 - 991
+$md-up:                        962px; // 992 - 1199
+$lg-up:                        1200px; // 1200+
+
+
+// STATIC MISC
+///////////////////////////////
+
+// COLORS
+$gray-dark:                    #373a3c;
+$gray:                         #55595c;
+$gray-light:                   #818a91;
+$gray-lighter:                 #eceeef;
+$gray-lightest:                #f7f7f9;
+$white:                        #fff;
+
+$pastel-red:                   #bd523e;
+$pastel-magenta:               #f49ac2;
+$pastel-green:                 #90c693;
+$pastel-blue:                  #779ecb;
+$pastel-yellow:                #fdfd96;
+$pastel-purple:                #b19cd9;
+$pastel-orange:                #ffb347;
+
+$success-color:                #5cb85c;
+$info-color:                   #5bc0de;
+$warning-color:                #f0ad4e;
+$danger-color:                 #d9534f;
+
+// FONT FAMILIS
+$font-family-sans-serif:       "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif:            Georgia, "Times New Roman", Times, serif;
+$font-family-monospace:        Menlo, Monaco, Consolas, "Courier New", monospace;
+
+// FORM VALIDATION ICONS
+$form-icon-success:            "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MTIgNzkyIj48cGF0aCBmaWxsPSIjNWNiODVjIiBkPSJNMjMzLjggNjEwYy0xMy4zIDAtMjYtNi0zNC0xNi44TDkwLjUgNDQ4LjhDNzYuMyA0MzAgODAgNDAzLjMgOTguOCAzODljMTguOC0xNC4yIDQ1LjUtMTAuNCA1OS44IDguNGw3MiA5NUw0NTEuMyAyNDJjMTIuNS0yMCAzOC44LTI2LjIgNTguOC0xMy43IDIwIDEyLjQgMjYgMzguNyAxMy43IDU4LjhMMjcwIDU5MGMtNy40IDEyLTIwLjIgMTkuNC0zNC4zIDIwaC0yeiIvPjwvc3ZnPg==";
+$form-icon-warning:            "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MTIgNzkyIj48cGF0aCBmaWxsPSIjZjBhZDRlIiBkPSJNNjAzIDY0MC4ybC0yNzguNS01MDljLTMuOC02LjYtMTAuOC0xMC42LTE4LjUtMTAuNnMtMTQuNyA0LTE4LjUgMTAuNkw5IDY0MC4yYy0zLjcgNi41LTMuNiAxNC40LjIgMjAuOCAzLjggNi41IDEwLjggMTAuNCAxOC4zIDEwLjRoNTU3YzcuNiAwIDE0LjYtNCAxOC40LTEwLjQgMy41LTYuNCAzLjYtMTQuNCAwLTIwLjh6bS0yNjYuNC0zMGgtNjEuMlY1NDloNjEuMnY2MS4yem0wLTEwN2gtNjEuMlYzMDRoNjEuMnYxOTl6Ii8+PC9zdmc+";
+$form-icon-danger:             "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2MTIgNzkyIj48cGF0aCBmaWxsPSIjZDk1MzRmIiBkPSJNNDQ3IDU0NC40Yy0xNC40IDE0LjQtMzcuNiAxNC40LTUyIDBsLTg5LTkyLjctODkgOTIuN2MtMTQuNSAxNC40LTM3LjcgMTQuNC01MiAwLTE0LjQtMTQuNC0xNC40LTM3LjYgMC01Mmw5Mi40LTk2LjMtOTIuNC05Ni4zYy0xNC40LTE0LjQtMTQuNC0zNy42IDAtNTJzMzcuNi0xNC4zIDUyIDBsODkgOTIuOCA4OS4yLTkyLjdjMTQuNC0xNC40IDM3LjYtMTQuNCA1MiAwIDE0LjMgMTQuNCAxNC4zIDM3LjYgMCA1MkwzNTQuNiAzOTZsOTIuNCA5Ni40YzE0LjQgMTQuNCAxNC40IDM3LjYgMCA1MnoiLz48L3N2Zz4=";
+
+// EASING BY BOURBON
+$ease-in-quad:                 cubic-bezier( .55, .085,  .68,  .53);
+$ease-in-cubic:                cubic-bezier( .55, .055, .675,  .19);
+$ease-in-quart:                cubic-bezier(.895,  .03, .685,  .22);
+$ease-in-quint:                cubic-bezier(.755,  .05, .855,  .06);
+$ease-in-sine:                 cubic-bezier( .47,    0, .745, .715);
+$ease-in-expo:                 cubic-bezier( .95,  .05, .795, .035);
+$ease-in-circ:                 cubic-bezier(  .6,  .04, .98 , .335);
+$ease-in-back:                 cubic-bezier(  .6, -.28, .735, .045);
+
+$ease-out-quad:                cubic-bezier(.25 ,  .46,  .45, .94);
+$ease-out-cubic:               cubic-bezier(.215,  .61, .355,   1);
+$ease-out-quart:               cubic-bezier(.165,  .84,  .44,   1);
+$ease-out-quint:               cubic-bezier(.23 ,    1,  .32,   1);
+$ease-out-sine:                cubic-bezier(.39 , .575, .565,   1);
+$ease-out-expo:                cubic-bezier(.19 ,    1,  .22,   1);
+$ease-out-circ:                cubic-bezier(.075, .82 , .165,   1);
+$ease-out-back:                cubic-bezier(.175, .885,  .32, 1.275);
+
+$ease-in-out-quad:             cubic-bezier(.455,  .03, .515,.955);
+$ease-in-out-cubic:            cubic-bezier(.645, .045, .355,   1);
+$ease-in-out-quart:            cubic-bezier(.77 ,    0, .175,   1);
+$ease-in-out-quint:            cubic-bezier(.86 ,    0,  .07,   1);
+$ease-in-out-sine:             cubic-bezier(.445,  .05,  .55, .95);
+$ease-in-out-expo:             cubic-bezier(   0,    0,    0,   1);
+$ease-in-out-circ:             cubic-bezier(.785, .135,  .15, .86);
+$ease-in-out-back:             cubic-bezier(.68,  -.55, .265, 1.55);

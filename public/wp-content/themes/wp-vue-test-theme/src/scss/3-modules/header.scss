@@ -1,0 +1,59 @@
+// HEADER
+////////////////////////////
+$header-height: 125px;
+
+.header {
+	padding: 40px 0;
+	position: relative;
+	z-index: 10;
+	transition: padding .4s;
+	width: 100%;
+	background: lighten($prim-color, 25%);
+	margin-bottom: 10vw;
+
+	> .container {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+
+
+// STICKY FOOTER
+	@if $sticky-footer { flex: none; }
+
+}
+
+// STICKY HEADER
+@if $sticky-header {
+
+	.header.fixed {
+		z-index: 9000;
+		position: fixed;
+		padding: 10px 0;
+
+		.logo { max-width: 60%; }
+	}
+
+
+	.header-sticky {
+		margin-bottom: 5vw;
+		height: $header-height;
+
+		@if $sticky-footer { flex: none; }
+	}
+}
+
+
+.logo { flex-basis: 20em; transition: .4s; }
+
+
+// QUERIES
+////////////////////////////
+@media (max-width: $xs) {
+
+	.header { padding: 20px 0; }
+	.logo { flex-basis: 50%; }
+	.header.fixed { position: static; }
+	.header-sticky { height: auto; }
+}

@@ -1,0 +1,15 @@
+
+.footer {
+    background: lighten($pastel-green, 25%);
+    padding: 20px 0;
+    margin-top: 50px;
+
+    > .container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+
+	@if $sticky-footer { flex: none; }
+}
